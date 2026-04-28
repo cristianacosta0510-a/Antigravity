@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Christian Acosta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            width: 8.5in;
+            min-height: 11in;
+            margin: 40px auto;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            box-sizing: border-box;
+            page-break-after: always;
+            overflow: hidden;
+        }
+
+        /* ------------------ CV HEADER ------------------ */
+        .cv-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            display: flex;
+            height: 240px;
+            position: relative;
+        }
+
+        .cv-header-text {
+            flex: 1;
+            padding: 40px 50px;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Cyberpunk / Tech Accents */
+        .accent-corner {
+            position: absolute;
+            top: 30px; left: 30px;
+            width: 50px; height: 50px;
+        }
+        .accent-corner::before {
+            content: ""; position: absolute;
+            top: 0; left: 0; width: 40px; height: 2px; background: #06b6d4;
+        }
+        .accent-corner::after {
+            content: ""; position: absolute;
+            top: 0; left: 0; width: 2px; height: 40px; background: #06b6d4;
+        }
+        
+        .chevrons {
+            color: #64748b;
+            font-weight: 700;
+            letter-spacing: 4px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            margin-left: 2px;
+        }
+
+        .name-title {
+            font-size: 42px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin: 0;
+            color: #e2e8f0;
+        }
+
+        .job-title {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-top: 10px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ------------------ CV PHOTO CONTAINER ------------------ */
+        .cv-photo-container {
+            width: 220px;
+            height: 240px;
+            background: #ffffff;
+            position: relative;
+        }
+
+        .cv-photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.1);
+            display: block;
+        }
+
+        .photo-border {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-left: 2px solid rgba(255,255,255,0.2);
+            box-shadow: inset 10px 0 20px rgba(0,0,0,0.5);
+            pointer-events: none;
+        }
+
+        /* ------------------ CV TWO-COLUMN BODY ------------------ */
+        .cv-body {
+            display: flex;
+            min-height: calc(11in - 240px);
+        }
+
+        .sidebar {
+            width: 32%;
+            background-color: #f8fafc;
+            padding: 40px 30px;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .main-content {
+            width: 68%;
+            padding: 40px 40px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0f172a;
+        }
+
+        .sidebar .section-title {
+            font-size: 14px;
+            border-bottom: 1px solid #cbd5e1;
+            margin-top: 30px;
+        }
+        .sidebar .section-title:first-child {
+            margin-top: 0;
+        }
+
+        p, li {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #334155;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 0;
+        }
+
+        .bold-text {
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        /* Timeline / Experience items */
+        .experience-item {
+            margin-bottom: 20px;
+        }
+        .exp-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .exp-meta {
+            font-size: 12px;
+            color: #64748b;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* Print formatting */
+        @media print {
+            body { background: white; margin: 0; }
+            .page { margin: 0; box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <!-- HEADER -->
+        <div class="cv-header">
+            <div class="cv-header-text">
+                <div class="accent-corner"></div>
+                <div class="chevrons">&lt;&lt;&lt;</div>
+                <h1 class="name-title">CURRICULUM VITAE</h1>
+                <div class="job-title">Christian Alejandro Acosta Perez &nbsp;·&nbsp; IT Developer</div>
+            </div>
+            
+            <div class="cv-photo-container">
+                <!-- PHOTO GOES HERE. REPLACE 'photo.png' WITH EXACT PATH TO NEW IMAGE -->
+                <img src="C:/Recorrido II VR/temp_cv_images/foto_final.png" alt="Profile Photo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlMmU4ZjAiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM2NDc0OGIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5bRm90byBkZSBQZXJmaWxdPC90ZXh0Pjwvc3ZnPg=='">
+                <div class="photo-border"></div>
+            </div>
+        </div>
+
+        <div class="cv-body">
+            
+            <!-- LEFT SIDEBAR -->
+            <div class="sidebar">
+                <div class="section-title">Contact / Data</div>
+                <p>
+                    <span class="bold-text">Location:</span><br>Morelia, Michoacán
+                </p>
+                <p>
+                    <span class="bold-text">Phone:</span><br>+52 443 195 32 92
+                </p>
+                <p>
+                    <span class="bold-text">Email:</span><br>christianacosta05desarrollo@gmail.com
+                </p>
+
+                <div class="section-title">Education</div>
+                <p>
+                    <span class="bold-text">Universidad Tecnológica de Morelia (UTM)</span><br>
+                    Degree: Tecnologías de la Información<br>
+                    Group: 5C (5to Cuatrimestre)
+                </p>
+
+                <div class="section-title">Languages</div>
+                <p>
+                    <span class="bold-text">Spanish:</span> Native<br>
+                    <span class="bold-text">English:</span> Intermediate - Advanced (Professional proficiency)
+                </p>
+
+                <div class="section-title">Skills Overview</div>
+                <ul>
+                    <li>Web XR & Virtual Reality</li>
+                    <li>Frontend UI/UX Design</li>
+                    <li>Django & Python Backend</li>
+                    <li>Team Leadership & Agile</li>
+                </ul>
+            </div>
+
+            <!-- RIGHT MAIN CONTENT -->
+            <div class="main-content">
+                <div class="section-title">Professional Objective</div>
+                <p>
+                    Motivated IT Developer and Technology Specialist seeking to leverage my strong problem-solving skills and software engineering expertise to develop innovative web, VR, and XR solutions. Dedicated to continuous learning, proactive teamwork, and contributing effectively to modern technological environments for real-world impact.
+                </p>
+
+                <div class="section-title">Professional Experience</div>
+                
+                <div class="experience-item">
+                    <div class="exp-title">Full Stack Web & VR Developer</div>
+                    <div class="exp-meta">Universidad Tecnológica de Morelia (Academic Projects) | 2025 - Present</div>
+                    <ul>
+                        <li>Developed complex web platforms including a "Smart City XR" dashboard integrating citizen reporting metrics using Django ORM and Chart.js.</li>
+                        <li>Engineered the core logic of "Recorrido II VR," seamlessly integrating multiple 360-degree virtual reality environments (Bosque, Catedral, San Francisco) via spatial teleportation and A-Frame.</li>
+                        <li>Designed high-fidelity user interfaces implementing modern styling techniques such as glassmorphism, responsive gridding, and CSS3 animations.</li>
+                    </ul>
+                </div>
+
+                <div class="section-title">IT & Technical Skills</div>
+                <div class="experience-item">
+                    <ul>
+                        <li><span class="bold-text">Programming:</span> Python, HTML5, Vanilla CSS3 (UI/UX optimization), JavaScript.</li>
+                        <li><span class="bold-text">Frameworks:</span> Django, A-Frame (WebVR), Chart.js, DOM manipulation.</li>
+                        <li><span class="bold-text">Tools & Design:</span> Git, GitHub, VS Code, Canva, 3D Asset Integration (Maya, Blender basics).</li>
+                    </ul>
+                </div>
+
+                <div class="section-title">Other Data of Interest</div>
+                <div class="experience-item">
+                    <ul>
+                        <li>Strong passion for Augmented and Virtual Reality (XR) ecosystems and immersive technological designs.</li>
+                        <li>Capable of managing complex project structures and driving independent web architectures.</li>
+                        <li>Excellent teamwork and adaptive technical communication capabilities.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

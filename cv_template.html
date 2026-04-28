@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #111;
+            background: #fff;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            width: 8.5in;
+            min-height: 11in;
+            box-sizing: border-box;
+            background: #fff;
+            position: relative;
+            page-break-after: always;
+            margin: auto;
+        }
+
+        /* ----- FRONT PAGE (PORTADA) ----- */
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2in 1in;
+            text-align: center;
+        }
+        .cover-logo {
+            width: 200px;
+            margin-bottom: 60px;
+        }
+        .cover-title {
+            font-size: 24pt;
+            font-weight: bold;
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 2px;
+            margin-bottom: 80px;
+        }
+        .cover-details {
+            text-align: left;
+            width: 100%;
+            max-width: 400px;
+            font-size: 14pt;
+            line-height: 1.8;
+            margin-bottom: 100px;
+        }
+        .cover-date {
+            font-size: 12pt;
+            color: #555;
+            margin-top: auto;
+        }
+
+        /* ----- CV PAGE HEADER ----- */
+        .cv-header {
+            background-color: #0d0d0d;
+            height: 220px;
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+            border-bottom: 3px solid #000;
+        }
+
+        .header-left {
+            padding: 35px 40px;
+            position: relative;
+            color: white;
+            flex: 1;
+        }
+
+        .header-grid {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+        }
+        /* Blue accent corner */
+        .header-grid::before {
+            content: "";
+            position: absolute;
+            top: 10px; left: 0; width: 30px; height: 1px; background: #00d2ff;
+            box-shadow: 0 15px 0 #00d2ff;
+        }
+        .header-grid::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 10px; width: 1px; height: 30px; background: #00d2ff;
+            box-shadow: 15px 0 0 #00d2ff;
+        }
+
+        .header-chevrons {
+            color: #666;
+            letter-spacing: 2px;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .header-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 38px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .header-subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            color: #aaa;
+            margin-top: 12px;
+            letter-spacing: 1px;
+        }
+
+        .header-right {
+            width: 220px;
+            background: #fff;
+            position: relative;
+        }
+        
+        .header-right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            display: block;
+        }
+
+        /* Abstract circles on the right of the photo (like his screenshot) */
+        .photo-decor {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transform: scaleY(0.4);
+            box-shadow: 0 20px 0 rgba(255, 255, 255, 0.2), 0 40px 0 rgba(255, 255, 255, 0.1);
+            pointer-events: none;
+        }
+
+        /* ----- CV BODY ----- */
+        .cv-body {
+            padding: 40px 50px;
+            font-size: 12pt;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14pt;
+            font-weight: 700;
+            color: #0b0b0b;
+            text-transform: uppercase;
+            border-bottom: 2px solid #0b0b0b;
+            margin-bottom: 12px;
+            padding-bottom: 4px;
+        }
+
+        .content-block {
+            margin-bottom: 10px;
+        }
+
+        .bold {
+            font-weight: bold;
+            color: #000;
+        }
+        
+        ul {
+            margin: 5px 0 0 20px;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+
+        @media print {
+            @page { margin: 0; }
+            body { margin: 0; padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PORTADA -->
+    <div class="page cover-page">
+        <!-- We use the relative URL because of the local python server -->
+        <img src="/temp_cv_images/logo.png" alt="UTM Logo" class="cover-logo">
+        <div class="cover-title">"Curriculum Vitae"</div>
+        <div class="cover-details">
+            <span class="bold">Carrera:</span> Tecnologías de la Información<br>
+            <span class="bold">Grado:</span> 5to Cuatrimestre<br>
+            <span class="bold">Grupo:</span> 5C<br>
+            <span class="bold">Estudiante:</span> Christian Alejandro Acosta Perez<br><br>
+            <span class="bold">Docente:</span> Adrián López Bolaños
+        </div>
+        <div class="cover-date">
+            Morelia, Michoacán a 20 de abril de 2026
+        </div>
+    </div>
+
+    <!-- CURRICULUM -->
+    <div class="page">
+        <!-- HEADER EXACT MATCH -->
+        <div class="cv-header">
+            <div class="header-left">
+                <div class="header-grid"></div>
+                <div class="header-chevrons">&lt;&lt;&lt;</div>
+                <div class="header-title">CURRICULUM VITAE</div>
+                <div class="header-subtitle">Christian Alejandro Acosta Perez | IT Developer & Technology Specialist</div>
+            </div>
+            <div class="header-right">
+                <!-- User photo -->
+                <img src="/temp_cv_images/photo.png" alt="Christian Acosta">
+                <div class="photo-decor"></div>
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="cv-body">
+            
+            <div class="section">
+                <div class="section-title">1. Personal Data</div>
+                <div class="content-block">
+                    <span class="bold">Address:</span> Morelia, Michoacán, Mexico <br>
+                    <span class="bold">Phone:</span> +52 443 195 32 92 <br>
+                    <span class="bold">Email:</span> christianacosta05desarrollo@gmail.com
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">2. Professional Objective</div>
+                <div class="content-block">
+                    Motivated IT Developer and Technology Specialist seeking to leverage my strong problem-solving skills and software engineering expertise to develop innovative web, VR, and XR solutions. Dedicated to continuous learning, proactive teamwork, and contributing effectively to modern technological environments for real-world impact.
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">3. Experience</div>
+                <div class="content-block">
+                    <span class="bold">Full Stack & VR Developer (Academic / Projects) | Universidad Tecnológica de Morelia (2025 - Present)</span>
+                    <ul>
+                        <li>Developed complex web platforms including a "Smart City XR" dashboard integrating citizen reporting metrics using Django and Chart.js.</li>
+                        <li>Engineered the core logic of "Recorrido II VR," seamlessly integrating multiple 360-degree virtual reality environments (Bosque, Catedral, San Francisco) via spatial teleportation and A-Frame.</li>
+                        <li>Designed high-fidelity user interfaces implementing modern styling techniques such as glassmorphism, responsive gridding, and CSS3 animations.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">4. Education</div>
+                <div class="content-block">
+                    <span class="bold">Universidad Tecnológica de Morelia (UTM)</span> | Morelia, Michoacán<br>
+                    Degree: Tecnologías de la Información<br>
+                    Current Status: 5th Cuatrimestre (Grupo 5C)
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">5. Languages</div>
+                <div class="content-block">
+                    <span class="bold">Spanish:</span> Native<br>
+                    <span class="bold">English:</span> Intermediate - Advanced (Professional working proficiency)
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">6. IT Skills</div>
+                <div class="content-block">
+                    <ul>
+                        <li><span class="bold">Programming & Web:</span> Python (Django ORM), HTML5, CSS3, JavaScript.</li>
+                        <li><span class="bold">Frameworks & Libraries:</span> A-Frame (WebVR), Chart.js, DOM manipulation.</li>
+                        <li><span class="bold">Tools:</span> Git, GitHub, VS Code, Canva, 3D Asset Integration (Maya, Blender basics).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">7. Other data of interest</div>
+                <div class="content-block">
+                    <ul>
+                        <li>Strong passion for Augmented and Virtual Reality (XR) ecosystems.</li>
+                        <li>Highly proactive and capable of managing complex project structures and codebases independently.</li>
+                        <li>Excellent teamwork and adaptive technical communication capabilities.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
